@@ -6,11 +6,17 @@ public class Account {
     }
 
     public boolean checkNameToEmboss() {
-        /*
-             Этот метод должен проверять, что сохранённая через конструктор строка соответствует требованиям.
-             Если строка удовлетворяет условиям, метод возвращает true, иначе — false.
-         */
-        return true;
+        if (name.length() < 3) {
+            return false;
+        } else if (name.length() > 19) {
+            return false;
+        } else if (!name.equals(name.trim())){
+            return false;
+        } else if (name.length() != name.replace(" ", "").length() + 1){
+            return false;
+        }else {
+            return true;
+        }
     }
 
 }
